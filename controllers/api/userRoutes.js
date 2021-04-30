@@ -6,8 +6,7 @@ router.post("/", async (req, res) => {
   console.log(req.body);
   try {
     const dbUserData = await User.create({
-      name: req.body.name,
-      email: req.body.email,
+      username: req.body.username,
       password: req.body.password,
     });
     req.session.user_id = dbUserData.user_id;
@@ -26,7 +25,7 @@ router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        email: req.body.email,
+        username: req.body.username,
       },
     });
     if (!dbUserData) {
