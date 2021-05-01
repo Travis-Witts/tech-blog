@@ -16,20 +16,27 @@
                     {{#each comments as |comment|}}
                     <div class="card" style="width: 18rem; float:none; margin: 0 auto; margin-bottom:10px;">
                         <div class="card-body">
-                            <h5 class="card-title">{{comment.content}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">By <a
-                                    href="user/{{comment.commenter.user_id}}"> {{comment.commenter.username}}</a></h6>
+                            <h6 class="card-title">{{comment.content}}</h6>
+                            <h7 class="card-subtitle mb-2 text-muted">By <a href="user/{{comment.commenter.user_id}}">
+                                    {{comment.commenter.username}}</a></h7>
                         </div>
                     </div>
                     {{/each}}
-                    {{#if loggedIn}}
-                        
-                    {{/if}}
+                    <form style="margin-left: 3%;" class="formSub" id="{{post.post_id}}">
+                        <div class="form-group" style="margin-top: 5%;">
+                            <h6>Leave a comment:</h6>
+                            <textarea class="form-control" name="review" id="comment" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="{{post.post_id}}"
+                            style="margin-top: 3%;">Submit</button>
+                    </form>
                 </div>
-
                 <br>
                 {{/each}}
             </ul>
         </div>
     </div>
 </div>
+{{#if loggedIn}}
+<script src="js/createComment.js"></script>
+{{/if}}
