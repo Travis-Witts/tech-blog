@@ -18,7 +18,6 @@ router.get('/', withAuth, async (req, res) => {
             ]
         });
         let posts = dbData.map((blogPost) => blogPost.get({ plain: true }));
-        console.log(posts)
         for (i = 0;i < posts.length; i++) {
             if (posts[i].OP.user_id == req.session.user_id) {
                 posts[i].postOwner = true;

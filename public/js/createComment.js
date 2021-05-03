@@ -1,4 +1,4 @@
-const createReview = async(event) =>{
+const createComment = async(event) =>{
     event.preventDefault();
     const postId = event.target.id;
     const content = document.querySelector('#comment').value;
@@ -12,8 +12,8 @@ const createReview = async(event) =>{
     if (response.ok){
         document.location.replace('/');
     }else{
-        alert('Fail to create review');
+        alert('Fail to create comment');
     }
 }
 
-document.querySelector('.formSub').addEventListener('submit', createReview);
+document.querySelector('.formSub').addEventListener('submit', createComment);
