@@ -3,9 +3,9 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
-  
+  A tech oriented blog post web app that allows users to share thoughts and comment on other's posts.
 
-  Example of working product: [HERE]()
+  Example of working product: [HERE](https://fierce-sands-72890.herokuapp.com/login)
 
     
   ## Table of Contents
