@@ -1,6 +1,7 @@
 const destroy = async(event) =>{
     event.preventDefault();
-    const post_id = event.target.id;
+    let post_id = event.target.id;
+    console.log(event.target.id)
 
     const response = await fetch(`/api/post/${post_id}`,{
         method:'DELETE',

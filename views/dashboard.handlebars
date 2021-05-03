@@ -1,25 +1,24 @@
 <div class="container" style="margin-top: 5%;text-align: center;">
     <h1 id="business_name">Tech Blog Posts</h1>
-                        <form style="margin-left: 3%;" id="postSub">
-                        <div class="form-group" style="margin-top: 5%;">
-                            <h6>Create a new post!</h6>
-                            <h7>Title:</h7>
-                            <textarea class="form-control" name="title" id="title" rows="1"></textarea>
-                            <h7>Post:</h7>
-                            <textarea class="form-control" name="post" id="post" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-secondary"
-                            style="margin-top: 3%;">Submit</button>
-                    </form>
+    <form style="margin-left: 3%;" id="postSub">
+        <div class="form-group" style="margin-top: 5%;">
+            <h6>Create a new post!</h6>
+            <h7>Title:</h7>
+            <textarea class="form-control" name="title" id="title" rows="1"></textarea>
+            <h7>Post:</h7>
+            <textarea class="form-control" name="post" id="post" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary" style="margin-top: 3%;">Submit</button>
+    </form>
     <div class="row" style="margin-top: 5%;">
         <div class="col-md-12">
             <ul class="list-group">
                 {{#each posts as |post| }}
-                {{#if post.postOwner}}
-                <a href=""><i class="fas fa-times"></i></a>
-                {{/if}}
                 <div class="card" style="width: 20rem; float:none; margin: 0 auto; margin-bottom:10px;">
                     <div class="card-body">
+                        {{#if post.postOwner}}
+                        <a class="deletePost" ><i id="{{post.post_id}}" class="fas fa-times"></i></a>
+                        {{/if}}
                         <h5 class="card-title">{{post.title}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">By {{post.OP.username}}</h6>
                         <p class="card-text">{{post.content}}</p>
@@ -50,4 +49,5 @@
 {{#if loggedIn}}
 <script src="js/createComment.js"></script>
 <script src="js/createPost.js"></script>
+<script src="js/deletePost.js"></script>
 {{/if}}
