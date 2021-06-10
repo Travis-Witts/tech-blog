@@ -7,6 +7,10 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
     try {
         const dbData = await Post.findAll({
+            order: [
+                ["date_created", "desc"],
+                [Comment, "date_created", "ASC"],
+              ],
             include: [
                 'OP',
                 {
@@ -23,8 +27,16 @@ router.get('/', withAuth, async (req, res) => {
                 posts[i].postOwner = true;
             }
         }
-
+        const userData = await User.findOne({
+            where: {
+                user_id: req.session.user_id
+            }
+        })
+        console.log(posts)
+        let user = userData.get({ plain: true });
+        let { username } = userData
         res.render('dashboard', {
+            username,
             posts,
             loggedIn: req.session.loggedIn,
         });
@@ -32,6 +44,13 @@ router.get('/', withAuth, async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     }
+});
+
+router.get('/post', withAuth, (req, res) => {
+
+    res.render('createpost',{
+        loggedIn: req.session.loggedIn,
+    });
 });
 
 router.get('/login', (req, res) => {

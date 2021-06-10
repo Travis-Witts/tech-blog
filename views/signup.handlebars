@@ -1,16 +1,26 @@
-<div class="container">
-    <div class="container Jumborton">
-        <h1>Registration</h1>
-        <hr>
-        <label for="username"><b>Username</b></label></br>
-        <input type="text" placeholder="Enter Username" name="username" id="username" ></br>
-        <label for="password" style="margin-top: 3%;"><b>Password</b></label></br>
-        <input type="password" placeholder="Enter Password" name="password" id="password"></br>
-        <button type="submit" class="registerbtn" style="margin-top: 3%;">Register</button>
+<div class="login-container">
+  <div class="card card-container">
+    <h1 class="login-header">Signup</h1>
+    <label for="uname"><b>Username</b></label>
+    <input
+      type="text"
+      placeholder="Enter Username"
+      name="name"
+      id="username"
+      class="input is-link login-field"
+    /><br />
+    <label for="psw" style="margin-top: 3%;"><b>Password</b></label>
+    <input
+      type="password"
+      placeholder="Enter Password"
+      name="psw"
+      id="password"
+      class="input is-link login-field"
+    /><br />
+    <button type="submit" class="registerbtn button is-info is-fullwidth">Sign Up</button><br />
+    <div class="container signin" >
+      <p>Already have an account? <a href="/login">Sign in!</a></p>
     </div>
-    <div class="container signin" style="margin-top: 3%;">
-        <p>Already have an account? <a href="/login">Sign in</a></p>
-    </div>
-</form>
+  </div>
 </div>
 <script src="js/signup.js"></script>

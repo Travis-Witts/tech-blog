@@ -1,0 +1,97 @@
+body {
+    background-color: rgb(236, 236, 236)
+}
+
+.page-header {
+    font-size: 32px;
+}
+
+.username {
+    color: rgb(179, 199, 0);
+    padding-left: 5px;
+}
+
+.post-time {
+    font-weight: bold;
+}
+
+.commenter-name {
+    font-size: 12px;
+}
+
+.comment-body {
+    font-size: 24px;
+}
+
+.comments {
+    display:none;
+}
+
+.deletePost {
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.accordion-item-header::after {
+    content: "\25BE";
+    font-size: 3rem;
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.3s ease-in-out;
+    cursor:pointer;
+}
+
+.accordion-item-header.active::after {
+    transform: rotate(180deg)
+}
+
+.accordion-item-header.active ~ .comments {
+    display:block;
+}
+
+.login-container {
+    width: 100%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: 
+    "lborder header rborder"
+    "lborder content rborder"
+    "footer footer footer";
+}
+
+.card-container {
+    height: 100%;
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-header {
+    font-weight: bold;
+    font-size: 32px;
+    padding-bottom: 50px;
+}
+
+.new-post-header {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.login-field {
+    padding: 1rem;
+}
+.post-btn {
+    margin-bottom: 3rem;
+}
+
+.nav-btn {
+    margin-left: 3px;
+    margin-right: 3px;
+}
