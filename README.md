@@ -5,7 +5,7 @@
   ## Description
   A tech oriented blog post web app that allows users to share thoughts and comment on other's posts.
 
-  Example of working product: [HERE](https://fierce-sands-72890.herokuapp.com/login)
+  Example of working product: [HERE](https://handlebars-tech-blog.herokuapp.com/)
 
     
   ## Table of Contents
@@ -22,6 +22,15 @@
   ## License
     
   This repository is covered under the [MIT](https://opensource.org/licenses/MIT) licensing.
+
+  ## Screenshots of the app:
+  Desktop version:
+
+  
+  ![Dashboard](./public/assets/dashboard.png)
+  ![Login](./public/assets/login.png)
+  ![Create a Post](./public/assets/post.png)
+
     
   ## Contributing
   Contributions in the form of pull requests and emails are welcome.
